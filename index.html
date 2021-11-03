@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+    <canvas id="myCanvas" width="300" height="200" style="border:1px solid #000000;">
+    </canvas>
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        var ctx1 = c.getContext("2d");
+        var ctx2 = c.getContext("2d");
+        var x=83;
+        var y=x-10;
+        var R=y-10;
+        var r=R/2;
+        var S=Math.pow(R,2)*((3*Math.sqrt(3))/4);
+        var side=Math.sqrt(S*(4/Math.sqrt(3)));
+        
+        ctx.beginPath();
+        ctx.moveTo(x, y-R);
+        ctx.lineTo(x-side/2, y+r);
+        ctx.lineTo(x+side/2, y+r);
+        ctx1.strokeStyle='#000';
+        ctx.closePath();
+        ctx.stroke();
+        ctx1.beginPath();
+        ctx1.arc(x, y, r, 0, 2 * Math.PI);
+        ctx1.strokeStyle='#f00';
+        ctx1.closePath();
+        ctx1.stroke(); 
+        ctx2.beginPath();
+        ctx2.arc(x, y, R, 0, 2 * Math.PI);
+        ctx1.strokeStyle='#00f';
+        ctx2.closePath();
+        ctx2.stroke();          
+       
+
+        </script>
+    
+</body>
+</html>
